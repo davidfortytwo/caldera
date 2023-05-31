@@ -30,6 +30,10 @@ RUN rm -rf /usr/local/go && tar -C /usr/local -xzf go1.17.6.linux-amd64.tar.gz;
 ENV PATH="${PATH}:/usr/local/go/bin"
 RUN go version;
 
+# Install upx
+RUN apt-get update && \
+    apt-get install upx
+
 # Compile default sandcat agent binaries, which will download basic golang dependencies.
 WORKDIR /usr/src/app/plugins/sandcat
 
