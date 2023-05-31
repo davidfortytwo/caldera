@@ -55,5 +55,5 @@ users:
   blue:
     blue: t_S7
   red:
-    t_S7: t_S7
+    #admin: admin
     red: t_S7
