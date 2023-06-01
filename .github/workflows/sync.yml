@@ -23,4 +23,4 @@ jobs:
           git config user.email 'null'
           git add .
           git diff-index --quiet HEAD || git commit -m "Sync with source repo"
-          git push
+          git push || echo 'Failed to push changes'
