@@ -52,7 +52,7 @@ async def start_server():
 
 
 def run_tasks(services):
-    loop = asyncio.get_event_loop()
+    loop = asyncio.get_event_loop_policy().get_event_loop()
     loop.create_task(app_svc.validate_requirements())
     loop.run_until_complete(data_svc.restore_state())
     loop.run_until_complete(knowledge_svc.restore_state())
