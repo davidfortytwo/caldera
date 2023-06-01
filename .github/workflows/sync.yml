@@ -1,7 +1,9 @@
 # Your GitHub Actions workflow
 name: Sync Repositories
 
-on: [push]
+on:
+  push:
+    branches: [ main ]
 
 jobs:
   sync:
@@ -12,13 +14,13 @@ jobs:
         with:
           repository: 'mitre/caldera'
           token: ${{ secrets.YOUR_GITHUB_TOKEN }}
-          path: 'src_repo'
+          path: 'caldera'
 
       - name: Sync Repositories
         run: |
-          rsync -a --delete src_repo/ .
+          rsync -a --delete ./caldera/ .
           git config user.name 'davidfortytwo'
           git config user.email 'null'
           git add .
-          git commit -m "Sync with source repo"
+          git diff-index --quiet HEAD || git commit -m "Sync with source repo"
           git push
