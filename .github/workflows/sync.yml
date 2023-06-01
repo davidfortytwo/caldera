@@ -1,10 +1,9 @@
+# Version: 4.1.1
 # Your GitHub Actions workflow
 name: Sync Repositories
-
 on:
   push:
     branches: [ main ]
-
 jobs:
   sync:
     runs-on: ubuntu-latest
@@ -12,10 +11,9 @@ jobs:
       - name: Checkout Source Repo
         uses: actions/checkout@v2
         with:
-          repository: 'mitre/caldera'
+          repository: 'null'
           token: ${{ secrets.YOUR_GITHUB_TOKEN }}
           path: 'caldera'
-
       - name: Sync Repositories
         run: |
           rsync -a --delete ./caldera/ .
