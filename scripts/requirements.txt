@@ -1,6 +1,6 @@
 PyYAML==6.0
 readchar==3.0.4
-requests==2.26.0
+requests==2.31.0
 beautifulsoup4==4.10.0
 GitPython==3.1.24
 
