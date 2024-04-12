@@ -21,6 +21,6 @@ lxml~=4.9.1  # debrief
 reportlab==3.6.12  # debrief
 svglib==1.0.1  # debrief
 Markdown==3.3.3  # training
-dnspython==2.1.0
+dnspython==2.6.1
 asyncssh==2.11.0
 aioftp~=0.20.0
